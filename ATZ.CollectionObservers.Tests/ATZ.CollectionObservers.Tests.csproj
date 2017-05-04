@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionChangedEventHandlersShould.cs" />
+    <Compile Include="CollectionObserverBaseShould.cs" />
+    <Compile Include="TestCollectionObserver.cs" />
     <Compile Include="TransfromerCollectionObserverTargetCollectionNullifier.cs" />
     <Compile Include="TransformerCollectionObserverShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

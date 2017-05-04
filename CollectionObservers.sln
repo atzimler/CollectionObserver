@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATZ.CollectionObservers", "ATZ.CollectionObservers\ATZ.CollectionObservers.csproj", "{A614BE2C-9696-41A2-B475-D287FEBC2D93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATZ.CollectionObservers.Tests", "ATZ.CollectionObservers.Tests\ATZ.CollectionObservers.Tests.csproj", "{03D66EE1-69B7-4CBC-9413-A4365E8F9ACD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{A614BE2C-9696-41A2-B475-D287FEBC2D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A614BE2C-9696-41A2-B475-D287FEBC2D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A614BE2C-9696-41A2-B475-D287FEBC2D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03D66EE1-69B7-4CBC-9413-A4365E8F9ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03D66EE1-69B7-4CBC-9413-A4365E8F9ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03D66EE1-69B7-4CBC-9413-A4365E8F9ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03D66EE1-69B7-4CBC-9413-A4365E8F9ACD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

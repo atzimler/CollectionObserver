@@ -24,13 +24,8 @@ namespace ATZ.CollectionObservers
 
         private static void Add([NotNull] ICollectionChangedEventSource<TEventItem, TCollectionItem> sender, [NotNull] NotifyCollectionChangedEventArgs e)
         {
-            if (e.NewItems == null)
-            {
-                throw new ArgumentOutOfRangeException(nameof(e),
-                    "e.Action == INotifyCollectionChangedAction.Add, but the e.NewItems collection is null!");
-            }
-
             var insertPosition = e.NewStartingIndex;
+            // ReSharper disable once PossibleNullReferenceException => e.NewItems != null <= NotifyCollectionChangedEventArgs.Constructors. for NotifyCollectionChangedAction.Add
             foreach (TEventItem model in e.NewItems)
             {
                 sender.InsertItem(insertPosition++, sender.CreateItem(model));
@@ -44,12 +39,7 @@ namespace ATZ.CollectionObservers
 
         private static void Remove([NotNull] ICollectionChangedEventSource<TEventItem, TCollectionItem> sender, [NotNull] NotifyCollectionChangedEventArgs e)
         {
-            if (e.OldItems == null)
-            {
-                throw new ArgumentOutOfRangeException(nameof(e),
-                    "e.Action == INotifyCollectionChangedAction.Remove, but the e.OldItems collection is null!");
-            }
-
+            // ReSharper disable once PossibleNullReferenceException => e.OldItems != null <= NotifyCollectionChangedEventArgs.Constructors. for NotifyCollectionChangedAction.Remove
             var itemsToRemove = e.OldItems.Count;
             while (itemsToRemove-- > 0)
             {
@@ -73,12 +63,7 @@ namespace ATZ.CollectionObservers
 
         private static void Replace([NotNull] ICollectionChangedEventSource<TEventItem, TCollectionItem> sender, [NotNull] NotifyCollectionChangedEventArgs e)
         {
-            if (e.NewItems == null)
-            {
-                throw new ArgumentOutOfRangeException(nameof(e),
-                    "e.Action == INotifyCollectionChangedAction.Replace, but the e.NewItems collection is null!");
-            }
-
+            // ReSharper disable once PossibleNullReferenceException => e.NewItems != null <= NotifyCollectionChangedEventArgs.Constructors. for NotifyCollectionChangedAction.Replace
             sender.ReplaceItem(e.NewStartingIndex, sender.CreateItem((TEventItem)e.NewItems[0]));
         }
 
@@ -100,11 +85,6 @@ namespace ATZ.CollectionObservers
             if (e == null)
             {
                 throw new ArgumentNullException(nameof(e));
-            }
-
-            if (!EventHandlers.ContainsKey(e.Action))
-            {
-                return;
             }
 
             var handler = EventHandlers[e.Action];

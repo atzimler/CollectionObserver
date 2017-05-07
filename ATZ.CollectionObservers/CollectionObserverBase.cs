@@ -119,11 +119,7 @@ namespace ATZ.CollectionObservers
             _sourceCollection.Add(sourceItem);
             AddItem(targetItem);
 
-            if (_sourceCollection == null)
-            {
-                return;
-            }
-
+            // ReSharper disable once PossibleNullReferenceException => Private in this class, but AddItem is abstract => could be changed only in AddItem but that will have no access to it
             _sourceCollection.CollectionChanged += SourceCollectionChanged;
         }
 

@@ -23,6 +23,11 @@ namespace ATZ.CollectionObservers.Tests
             return string.Join(",", collection.ToList().ConvertAll(item => item.ToString()));
         }
 
+        private int Identity(int i)
+        {
+            return i;
+        }
+
         [Test]
         public void AddItemToTheTargetWhenAddedToTheSource()
         {
@@ -43,7 +48,7 @@ namespace ATZ.CollectionObservers.Tests
             var tc = new ObservableCollection<int>();
 
             // ReSharper disable once UnusedVariable => variable needed to correctly create the connector that will set up the MVVM components.
-            var conn = new TransformerCollectionObserver<int, int>(n => n)
+            var conn = new TransformerCollectionObserver<int, int>(Identity)
             {
                 SourceCollection = sc,
                 TargetCollection = tc
@@ -62,7 +67,7 @@ namespace ATZ.CollectionObservers.Tests
             var tc = new ObservableCollection<int>();
 
             // ReSharper disable once UnusedVariable => variable needed to correctly create the connector that will set up the MVVM components.
-            var conn = new TransformerCollectionObserver<int, int>(n => n)
+            var conn = new TransformerCollectionObserver<int, int>(Identity)
             {
                 SourceCollection = sc,
                 TargetCollection = tc
@@ -127,7 +132,7 @@ namespace ATZ.CollectionObservers.Tests
             var tc = new ObservableCollection<int>();
 
             // ReSharper disable once UnusedVariable => variable needed to correctly create the connector that will set up the MVVM components.
-            var conn = new TransformerCollectionObserver<int, int>(n => n)
+            var conn = new TransformerCollectionObserver<int, int>(Identity)
             {
                 SourceCollection = sc,
                 TargetCollection = tc
@@ -146,7 +151,7 @@ namespace ATZ.CollectionObservers.Tests
             var tc = new ObservableCollection<int>();
 
             // ReSharper disable once UnusedVariable => variable needed to correctly create the connector that will set up the MVVM components.
-            var conn = new TransformerCollectionObserver<int, int>(n => n)
+            var conn = new TransformerCollectionObserver<int, int>(Identity)
             {
                 SourceCollection = sc,
                 TargetCollection = tc
@@ -165,7 +170,7 @@ namespace ATZ.CollectionObservers.Tests
             var sc2 = new ObservableCollection<int> { 2, 3, 4 };
             var tc = new ObservableCollection<int>();
 
-            var conn = new TransformerCollectionObserver<int, int>(n => n)
+            var conn = new TransformerCollectionObserver<int, int>(Identity)
             {
                 SourceCollection = sc1,
                 TargetCollection = tc
@@ -182,7 +187,7 @@ namespace ATZ.CollectionObservers.Tests
         {
             var tc = new ObservableCollection<int>();
 
-            var conn = new TransformerCollectionObserver<int, int>(n => n);
+            var conn = new TransformerCollectionObserver<int, int>(Identity);
             Assert.IsNull(conn.TargetCollection);
 
             conn.TargetCollection = tc;

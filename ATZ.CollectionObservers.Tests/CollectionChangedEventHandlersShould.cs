@@ -36,18 +36,5 @@ namespace ATZ.CollectionObservers.Tests
             Assert.IsNotNull(ex);
             Assert.AreEqual("e", ex.ParamName);
         }
-
-        [Test, Explicit]
-        public void AddEventHandlerArgumentErrorThrowsCorrectException()
-        {
-            var sender = new Mock<ICollectionChangedEventSource<int, int>>();
-            var notifyCollectionChangedEventArgs = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace, null, null, 0);
-            Assert.IsNull(notifyCollectionChangedEventArgs.OldItems);
-            CollectionChangedEventHandlers<int, int>.Handle(
-                sender.Object,
-                notifyCollectionChangedEventArgs
-                );
-        }
-
     }
 }

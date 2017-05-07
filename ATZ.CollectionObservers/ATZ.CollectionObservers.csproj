@@ -37,6 +37,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyVersion.cs">
+      <Link>AssemblyVersion.cs</Link>
+    </Compile>
     <Compile Include="CollectionChangedEventHandlers.cs" />
     <Compile Include="CollectionObserver.cs" />
     <Compile Include="CollectionObserverBase.cs" />

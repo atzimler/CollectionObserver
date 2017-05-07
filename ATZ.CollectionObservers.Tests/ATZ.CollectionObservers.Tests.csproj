@@ -52,8 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyVersion.cs">
+      <Link>AssemblyVersion.cs</Link>
+    </Compile>
     <Compile Include="CollectionChangedEventHandlersShould.cs" />
     <Compile Include="CollectionObserverBaseShould.cs" />
+    <Compile Include="TestCollection.cs" />
     <Compile Include="TestCollectionObserver.cs" />
     <Compile Include="TransfromerCollectionObserverTargetCollectionNullifier.cs" />
     <Compile Include="TransformerCollectionObserverShould.cs" />

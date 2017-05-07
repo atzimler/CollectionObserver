@@ -23,7 +23,6 @@
 
   <files>
     <file src="bin\DebugNET45\ATZ.CollectionObservers*.*" target="lib\net45" />
-    <file src="bin\DebugNET452\ATZ.CollectionObservers*.*" target="lib\net452" />
   </files>
 
 </package>
